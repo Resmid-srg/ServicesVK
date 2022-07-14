@@ -21,5 +21,14 @@
 			</array>
 		</dict>
 	</dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>cloud</string>
+		<string>my.games</string>
+		<string>samokat</string>
+		<string>vk</string>
+		<string>vk-share</string>
+		<string>vkauthorize</string>
+	</array>
 </dict>
 </plist>
