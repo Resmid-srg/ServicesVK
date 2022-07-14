@@ -6,21 +6,21 @@
 //
 
 import UIKit
+import SwiftUI
 
 class MainTableViewController: UITableViewController {
 
     var array = [Services]()
     let networkService = NetworkService()
-    //var vkServices: VKServices? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //MARK: JSON
+        
         let urlString = "https://publicstorage.hb.bizmrg.com/sirius/result.json"
-
         networkService.request(urlString: urlString) { [weak self] (result) in
             switch result {
-                
             case .success(let array):
                 self?.array = array.body.services
                 self?.tableView.reloadData()
@@ -29,21 +29,23 @@ class MainTableViewController: UITableViewController {
             }
         }
         
-        view.backgroundColor = .black
+        //MARK: Design
         
         navigationItem.title = "Сервисы VK"
         UIApplication.shared.windows.first?.overrideUserInterfaceStyle = .dark
         navigationItem.standardAppearance = .none
         navigationController?.navigationBar.isTranslucent = false
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellID")
+        //MARK: InitTable
         
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellID")
         let nib = UINib(nibName: "ServiceCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: ServiceCell.reuseId)
     }
     
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  array.count //vkServices?.body.services.count
+        return  array.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,23 +57,24 @@ class MainTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         return 84
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let service = array[indexPath.row]
-        
         let dir = service.link
-                
-        if let url  = URL(string: "samokat://")
-        {
+        if let url  = URL(string: dir) {
             if UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.open(url)
-            } //else {
-               // UIApplication.shared.open(URL(string:service.link)!)
-            //}
+                switch service.name {
+                case "Все аптеки": UIApplication.shared.open(URL(string: "vseapteki://")!)
+                case "My.Games": UIApplication.shared.open(URL(string: "mygamesapp://")!)
+                case "Самокат": UIApplication.shared.open(URL(string: "samokat://")!)
+                case "Ситидрайв": UIApplication.shared.open(URL(string: "youdriveapp://")!)
+                case "Облако": UIApplication.shared.open(URL(string: "cloudmailru://")!)
+                default: UIApplication.shared.open(url)
+                }
+                
+            }
         }
     }
-    
 }

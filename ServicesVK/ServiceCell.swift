@@ -24,13 +24,22 @@ class ServiceCell: UITableViewCell {
     @IBOutlet var serviceNameLabel: UILabel!
     @IBOutlet var serviceImageView: UIImageView!
     
+    
     override class func awakeFromNib() {
         super.awakeFromNib()
     }
     
+//    override func prepareForReuse() {
+//        prepareForReuse()
+//
+//        serviceImageView.image = nil
+//    }
+    
     func set (viewModel: ServiceCellViewModel) {
         serviceNameLabel.text = viewModel.name
         serviceDescriptionLabel.text = viewModel.description
+        
         serviceImageView.sd_setImage(with: URL(string: viewModel.icon_url), completed: nil)
+        
     }
 }
