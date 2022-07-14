@@ -15,14 +15,13 @@
 		323F282C287FED2A0084E80C /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F282B287FED2A0084E80C /* MainTableViewController.swift */; };
 		323F2854288003E90084E80C /* ModelServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F2853288003E90084E80C /* ModelServices.swift */; };
 		323F2857288004470084E80C /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F2856288004470084E80C /* NetworkingService.swift */; };
-		323F285B28801E940084E80C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 323F285A28801E940084E80C /* Alamofire */; };
 		323F2868288070820084E80C /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 323F2867288070820084E80C /* SDWebImage */; };
-		323F286A288070820084E80C /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 323F2869288070820084E80C /* SDWebImageMapKit */; };
 		32CECC842880BA590008C28C /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CECC832880BA590008C28C /* ServiceCell.swift */; };
 		32CECC872880BEE80008C28C /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32CECC852880BA630008C28C /* ServiceCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		28A6EB182EB8A15CC14B8578 /* Pods-ServicesVK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServicesVK.debug.xcconfig"; path = "Target Support Files/Pods-ServicesVK/Pods-ServicesVK.debug.xcconfig"; sourceTree = "<group>"; };
 		323F2810287FEB4A0084E80C /* ServicesVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ServicesVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		323F2813287FEB4A0084E80C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		323F2815287FEB4A0084E80C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +34,8 @@
 		323F2856288004470084E80C /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		32CECC832880BA590008C28C /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
 		32CECC852880BA630008C28C /* ServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
+		93D84BD866608AC008478826 /* Pods-ServicesVK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServicesVK.release.xcconfig"; path = "Target Support Files/Pods-ServicesVK/Pods-ServicesVK.release.xcconfig"; sourceTree = "<group>"; };
+		BE9FCECF449DE120E39A6988 /* Pods_ServicesVK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ServicesVK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,19 +44,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				323F2868288070820084E80C /* SDWebImage in Frameworks */,
-				323F286A288070820084E80C /* SDWebImageMapKit in Frameworks */,
-				323F285B28801E940084E80C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B6CD0B3D354CE8319AE3075 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				28A6EB182EB8A15CC14B8578 /* Pods-ServicesVK.debug.xcconfig */,
+				93D84BD866608AC008478826 /* Pods-ServicesVK.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		323F2807287FEB4A0084E80C = {
 			isa = PBXGroup;
 			children = (
 				323F2812287FEB4A0084E80C /* ServicesVK */,
 				323F2811287FEB4A0084E80C /* Products */,
+				1B6CD0B3D354CE8319AE3075 /* Pods */,
+				84B3B317F301F7B1107C131B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +112,14 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		84B3B317F301F7B1107C131B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE9FCECF449DE120E39A6988 /* Pods_ServicesVK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,6 +127,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 323F2824287FEB4A0084E80C /* Build configuration list for PBXNativeTarget "ServicesVK" */;
 			buildPhases = (
+				48A07DF0483F62E0A2C98D19 /* [CP] Check Pods Manifest.lock */,
 				323F280C287FEB4A0084E80C /* Sources */,
 				323F280D287FEB4A0084E80C /* Frameworks */,
 				323F280E287FEB4A0084E80C /* Resources */,
@@ -119,9 +138,7 @@
 			);
 			name = ServicesVK;
 			packageProductDependencies = (
-				323F285A28801E940084E80C /* Alamofire */,
 				323F2867288070820084E80C /* SDWebImage */,
-				323F2869288070820084E80C /* SDWebImageMapKit */,
 			);
 			productName = ServicesVK;
 			productReference = 323F2810287FEB4A0084E80C /* ServicesVK.app */;
@@ -152,7 +169,6 @@
 			);
 			mainGroup = 323F2807287FEB4A0084E80C;
 			packageReferences = (
-				323F285928801E940084E80C /* XCRemoteSwiftPackageReference "Alamofire" */,
 				323F2866288070820084E80C /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 323F2811287FEB4A0084E80C /* Products */;
@@ -177,6 +193,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		48A07DF0483F62E0A2C98D19 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ServicesVK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		323F280C287FEB4A0084E80C /* Sources */ = {
@@ -330,6 +371,7 @@
 		};
 		323F2825287FEB4A0084E80C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28A6EB182EB8A15CC14B8578 /* Pods-ServicesVK.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -359,6 +401,7 @@
 		};
 		323F2826287FEB4A0084E80C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93D84BD866608AC008478826 /* Pods-ServicesVK.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -410,14 +453,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		323F285928801E940084E80C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 		323F2866288070820084E80C /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
@@ -429,20 +464,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		323F285A28801E940084E80C /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 323F285928801E940084E80C /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
 		323F2867288070820084E80C /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 323F2866288070820084E80C /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
-		};
-		323F2869288070820084E80C /* SDWebImageMapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 323F2866288070820084E80C /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImageMapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
