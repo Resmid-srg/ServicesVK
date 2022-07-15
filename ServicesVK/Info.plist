@@ -23,8 +23,11 @@
 	</dict>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>cloud</string>
-		<string>my.games</string>
+		<string></string>
+		<string>samokat</string>
+		<string>vseapteki</string>
+		<string>cloudmailru</string>
+		<string>mygamesapp</string>
 		<string>samokat</string>
 		<string>vk</string>
 		<string>vk-share</string>
