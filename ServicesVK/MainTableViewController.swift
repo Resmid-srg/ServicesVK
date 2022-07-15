@@ -62,19 +62,19 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let service = array[indexPath.row]
-        let dir = service.link
+        var dir = String()
+        switch service.name {
+        case "Все аптеки": dir = "vseapteki://"
+        case "My.Games": dir = "mygamesapp://"
+        case "Самокат": dir = "samokat://"
+        case "Ситидрайв": dir = "youdriveapp://"
+        case "Облако": dir = "cloudmailru://"
+        default: dir = service.link
+        }
         if let url  = URL(string: dir) {
             if UIApplication.shared.canOpenURL(url) {
-                switch service.name {
-                case "Все аптеки": UIApplication.shared.open(URL(string: "vseapteki://")!)
-                case "My.Games": UIApplication.shared.open(URL(string: "mygamesapp://")!)
-                case "Самокат": UIApplication.shared.open(URL(string: "samokat://")!)
-                case "Ситидрайв": UIApplication.shared.open(URL(string: "youdriveapp://")!)
-                case "Облако": UIApplication.shared.open(URL(string: "cloudmailru://")!)
-                default: UIApplication.shared.open(url)
-                }
-                
-            }
+                UIApplication.shared.open(url)
+            } else { UIApplication.shared.open(URL(string: service.link)!) }
         }
     }
 }
